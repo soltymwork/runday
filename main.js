@@ -27,13 +27,19 @@ const interval = setInterval(function() {
 // --- Navbar Scroll Effect ---
 const navbar = document.getElementById('navbar');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
+function updateNavbar() {
+  if (window.scrollY > 10) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
-});
+}
+
+// Initialize immediately so navbar never starts in wrong state
+updateNavbar();
+
+// Use passive: true - critical for smooth scroll performance on mobile
+window.addEventListener('scroll', updateNavbar, { passive: true });
 
 // --- Mobile Navigation ---
 const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -109,4 +115,4 @@ window.addEventListener('scroll', () => {
       li.classList.add('active');
     }
   });
-});
+}, { passive: true });
