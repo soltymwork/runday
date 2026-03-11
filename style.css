@@ -31,16 +31,12 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
 body {
   font-family: var(--font-primary);
   color: var(--c-text);
   background-color: var(--c-black);
   line-height: 1.6;
-  padding-top: var(--nav-height); /* Offset for fixed navbar */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -239,14 +235,14 @@ img {
 
 /* Navbar */
 .navbar {
-  position: fixed;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
   height: var(--nav-height);
-  background-color: transparent;
+  background-color: var(--c-black);
   z-index: 1000;
-  transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
   display: flex;
   align-items: center;
 }
@@ -339,11 +335,13 @@ img {
 /* Hero Section */
 .hero {
   position: relative;
-  padding: 50px 0 80px; /* Reduced top padding since body already has padding-top */
+  padding: 50px 0 80px;
   display: flex;
   align-items: center;
   background-color: var(--c-dark);
   overflow: hidden;
+  margin-top: calc(-1 * var(--nav-height)); /* Pull hero up behind the sticky navbar */
+  padding-top: calc(var(--nav-height) + 50px); /* Compensate with extra top padding */
 }
 
 .hero-bg {
