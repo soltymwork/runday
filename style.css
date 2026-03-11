@@ -32,6 +32,7 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -40,6 +41,7 @@ body {
   background-color: var(--c-black);
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -169,14 +171,15 @@ img {
 }
 
 .btn-grey {
-  background-color: #4a4a4a; /* Darker Matte Grey */
-  color: var(--c-white);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #222222 !important; /* Deep Matte Grey */
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .btn-grey:hover {
-  background-color: #333333;
-  border-color: var(--c-white);
+  background-color: #111111 !important;
+  border-color: #ffffff !important;
 }
 
 .btn-grey-text {
@@ -199,12 +202,14 @@ img {
 }
 
 .btn-large {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
+  padding: 1.2rem 3rem !important;
+  font-size: 1.2rem !important;
 }
 
-.full-width {
-  width: 100%;
+.btn-small {
+  padding: 0.6rem 1.8rem !important;
+  font-size: 0.9rem !important;
+  border-radius: 4px;
 }
 
 .glow-effect {
@@ -227,8 +232,11 @@ img {
   background-color: transparent;
   padding: 1rem 0;
   z-index: 10000;
-  transition: var(--transition);
-  transform: translateZ(0); /* Fix for mobile flickering/hiding */
+  transition: background-color 0.3s ease, padding 0.3s ease;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .navbar.scrolled {
@@ -442,12 +450,12 @@ img {
 
 .hero-scroll-wrapper-centered {
   position: absolute;
-  bottom: 4%; /* Moved lower */
+  bottom: 20px !important; /* Forces it to the absolute bottom */
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
-  z-index: 10;
+  z-index: 20;
   pointer-events: none;
 }
 
