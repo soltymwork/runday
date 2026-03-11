@@ -161,6 +161,18 @@ img {
   border-color: var(--c-white);
 }
 
+.btn-badge {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--c-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.btn-badge:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--c-white);
+}
+
 .btn-large {
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
@@ -304,7 +316,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, rgba(227, 24, 55, 1) 0%, rgba(227, 24, 55, 0.95) 30%, rgba(194, 19, 45, 0.6) 60%, transparent 100%);
+  background: linear-gradient(90deg, rgba(227, 24, 55, 1) 0%, rgba(227, 24, 55, 0.95) 20%, rgba(194, 19, 45, 0.6) 40%, transparent 75%);
   z-index: 2;
 }
 
@@ -419,7 +431,7 @@ img {
 }
 
 @media (max-width: 1024px) {
-  .hero-color-overlay { background: linear-gradient(90deg, rgba(227, 24, 55, 1) 0%, rgba(227, 24, 55, 0.95) 45%, rgba(194, 19, 45, 0.4) 80%, transparent 100%); }
+  .hero-color-overlay { background: linear-gradient(90deg, rgba(227, 24, 55, 1) 0%, rgba(227, 24, 55, 0.95) 30%, rgba(194, 19, 45, 0.4) 60%, transparent 90%); }
   .hero-left-col { max-width: 65%; }
 }
 @media (max-width: 768px) {
@@ -465,8 +477,13 @@ img {
 }
 
 .hero-scroll-btn {
-  font-size: 1.2rem;
-  padding: 1rem 3rem;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  font-size: 1rem;
+  padding: 0.8rem 2.5rem;
   border-radius: 50px;
   background: var(--c-white);
   color: var(--c-black);
@@ -697,10 +714,16 @@ img {
 }
 
 .family-list li::before {
-  content: '👉';
+  content: '';
   position: absolute;
   left: 0;
-  font-size: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: var(--c-white);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
 
