@@ -62,24 +62,32 @@ document.querySelectorAll('.nav-item').forEach(link => {
   });
 });
 
-// --- Scroll Reveal Animation ---
+// --- Scroll Reveal Animation with Intersection Observer ---
 const revealElements = document.querySelectorAll('.reveal');
 
-const revealOnScroll = () => {
-  const windowHeight = window.innerHeight;
-  const elementVisible = 150;
-
-  revealElements.forEach(el => {
-    const elementTop = el.getBoundingClientRect().top;
-    if (elementTop < windowHeight - elementVisible) {
-      el.classList.add('active');
-    }
-  });
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
 };
 
-window.addEventListener('scroll', revealOnScroll);
-// Trigger once on load
-revealOnScroll();
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target); // Optional: stop observing once it's visible
+    }
+  });
+}, observerOptions);
+
+revealElements.forEach(el => {
+  observer.observe(el);
+});
+
+// Immediately add 'active' to hero elements to ensure they display on load
+document.querySelectorAll('.hero .reveal').forEach(el => {
+  el.classList.add('active');
+});
 
 // --- Active Nav Link Highlight ---
 const sections = document.querySelectorAll('section');
@@ -90,7 +98,7 @@ window.addEventListener('scroll', () => {
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
-    if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+    if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
       current = section.getAttribute('id');
     }
   });
