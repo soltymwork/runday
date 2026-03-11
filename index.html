@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G-SHOCK RunDay Trávnica - 5. ročník | 13. Jún 2026</title>
+    <meta name="description" content="Jubilejný 5. ročník G-Shock Runday v Trávnici. Bežecký sviatok, hudba, tombola a program pre celú rodinu! 13. júna 2026, Areál ZŠ Trávnica." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        <div class="logo-area">
+          <a href="#" class="logo-link">
+             <!-- <img src="/gshock-logo.png" alt="G-SHOCK" class="nav-logo"> -->
+             <span class="logo-text">G-SHOCK <span class="text-red">RUNDAY</span></span>
+          </a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-btn">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links" id="nav-links">
+          <a href="#about" class="nav-item">O podujatí</a>
+          <a href="#program" class="nav-item">Bežecký program</a>
+          <a href="#activities" class="nav-item">Atrakcie & Show</a>
+          <a href="#tombola" class="nav-item">Tombola</a>
+          <a href="#results" class="nav-item">Výsledky</a>
+          <a href="https://registrace.sportsoft.cz/registration.aspx?e=3563" target="_blank" class="btn btn-primary nav-cta">REGISTRÁCIA</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-bg-overlay"></div>
+      
+      <div class="container hero-content">
+        <div class="hero-badge reveal fade-up">5. ROČNÍK</div>
+        <h1 class="hero-title reveal fade-up" style="transition-delay: 100ms;">
+          Bežecký sviatok v <span class="text-red">Trávnici!</span>
+        </h1>
+        <p class="hero-subtitle reveal fade-up" style="transition-delay: 200ms;">
+          Pripravte si tenisky a dobrú náladu. Čaká nás jubilejný 5. ročník G-Shock Runday, kde športové výkony strieda skvelá zábava pre celú rodinu.
+        </p>
+        
+        <div class="hero-details reveal fade-up" style="transition-delay: 300ms;">
+          <div class="detail-item">
+            <span class="detail-icon">📅</span>
+            <span class="detail-text">13. jún 2026</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">📍</span>
+            <span class="detail-text">Areál ZŠ Trávnica</span>
+          </div>
+        </div>
+
+        <div class="hero-actions reveal fade-up" style="transition-delay: 400ms;">
+          <a href="https://registrace.sportsoft.cz/registration.aspx?e=3563" target="_blank" class="btn btn-primary btn-large glow-effect">
+            SPUSTIŤ REGISTRÁCIU
+          </a>
+          <a href="#program" class="btn btn-outline btn-large">ZISTIŤ VIAC</a>
+        </div>
+
+        <!-- Countdown Wrapper -->
+        <div class="countdown-wrapper reveal fade-up" style="transition-delay: 500ms;">
+          <div class="countdown-partner">
+            <!-- Used text since user image is not directly readable, user can replace this later with an img tag if needed -->
+            <!-- <img src="/gshock-logo.png" alt="G-SHOCK" class="gshock-countdown-logo"> -->
+            <div class="gshock-logo-placeholder">G-SHOCK</div>
+          </div>
+          <div class="countdown-timer" id="countdown">
+            <div class="time-box">
+              <span class="time-val" id="cd-days">00</span>
+              <span class="time-label">Dní</span>
+            </div>
+            <div class="time-divider">:</div>
+            <div class="time-box">
+              <span class="time-val" id="cd-hours">00</span>
+              <span class="time-label">Hodín</span>
+            </div>
+            <div class="time-divider">:</div>
+            <div class="time-box">
+              <span class="time-val" id="cd-minutes">00</span>
+              <span class="time-label">Minút</span>
+            </div>
+            <div class="time-divider">:</div>
+            <div class="time-box text-red">
+              <span class="time-val" id="cd-seconds">00</span>
+              <span class="time-label">Sekúnd</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <a href="#about" class="scroll-indicator">
+        <span class="mouse">
+          <span class="wheel"></span>
+        </span>
+      </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="grid-2 align-center">
+          <div class="about-text reveal slide-right">
+            <h2 class="section-title">Prečo nesmiete <span class="text-red">chýbať?</span></h2>
+            <p class="lead-text">Či ste profi bežec, hobby nadšenec alebo hľadáte program pre deti, 13. júna v Trávnici si prídete na svoje!</p>
+            <p>Pripravili sme si pre vás nielen kvalitné bežecké trate, ale aj bohatý sprievodný program, ktorý roztancuje každého. Naša snaha je spojiť šport a kultúru do jedného fantastického dňa, kedy sa môže stretnúť celá komunita a zažiť spolu úžasné momenty.</p>
+            <ul class="check-list">
+              <li>Krásna účastnícka medaila pre každého bežca 🏅</li>
+              <li>Merané preteky so špičkovým čipovým systémom</li>
+              <li>Zábava a atrakcie pre deti po celý deň</li>
+              <li>Večerný koncert a Oldies párty</li>
+            </ul>
+          </div>
+          <div class="about-media reveal slide-left relative">
+            <div class="media-decoration"></div>
+            <!-- Video Placeholder -->
+            <div class="video-container">
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Section -->
+    <section class="section program-section bg-dark text-white" id="program">
+      <div class="container">
+        <div class="section-header text-center reveal fade-up">
+          <h2 class="section-title">Bežecký <span class="text-red">Program</span></h2>
+          <p>Vyberte si trasu, ktorá vám sadne. Každý krok sa počíta!</p>
+        </div>
+        
+        <div class="grid-3 cards-container">
+          <!-- Card 1 -->
+          <div class="card premium-card reveal fade-up" style="transition-delay: 100ms;">
+            <div class="card-icon">👟</div>
+            <h3>3 300 m Beh</h3>
+            <p>Ideálna dĺžka pre každého. Či už začínate alebo si chcete užiť rýchlejšie tempo, táto trať je pre vás.</p>
+            <a href="https://registrace.sportsoft.cz/registration.aspx?e=3563" class="btn btn-outline-white full-width mt-auto">Registrovať na 3.3km</a>
+          </div>
+          <!-- Card 2 -->
+          <div class="card premium-card highlight-card reveal fade-up" style="transition-delay: 200ms;">
+            <div class="card-badge">HLAVNÝ BEH</div>
+            <div class="card-icon text-red">🔥</div>
+            <h3>10 000 m Beh</h3>
+            <p>Výzva pre náročnejších. Prekonajte sami seba na 10 km trati a zabojujte o popredné umiestnenia.</p>
+            <a href="https://registrace.sportsoft.cz/registration.aspx?e=3563" class="btn btn-primary full-width mt-auto">Registrovať na 10km</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="card premium-card reveal fade-up" style="transition-delay: 300ms;">
+            <div class="card-icon">🧒</div>
+            <h3>Detské behy</h3>
+            <p>Merané behy pestrých dĺžok podľa vekových kategórií. Skvelá príležitosť pre budúcich šampiónov.</p>
+            <a href="https://registrace.sportsoft.cz/registration.aspx?e=3563" class="btn btn-outline-white full-width mt-auto">Registrovať Deti</a>
+          </div>
+        </div>
+        
+        <div class="course-map-container mt-large reveal fade-up">
+            <h3 class="text-center mb-medium">Mapa tratí</h3>
+            <div class="map-placeholder">
+                <p>Miesto pre zobrazenie mapy tratí</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities & Show -->
+    <section class="section activities-section" id="activities">
+      <div class="container">
+        <div class="grid-2">
+          
+          <div class="activities-col reveal slide-right">
+            <h2 class="section-title">Večerná <span class="text-red">Show</span></h2>
+            <div class="activity-box">
+              <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1000&auto=format&fit=crop');"></div>
+              <div class="activity-content">
+                <h4>Hit Karola Duchoňa</h4>
+                <p>Vynikajúca pocta legende! ĽUDO KURUC BAND zahrá najväčšie hity priamo po tombole.</p>
+              </div>
+            </div>
+            <div class="activity-box mt-3">
+              <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000&auto=format&fit=crop');"></div>
+              <div class="activity-content">
+                <h4>Oldies Party</h4>
+                <p>Od tanca neodídeme! Oslavujeme vaše bežecké výkony a tancujeme až do samého rána.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="activities-col reveal slide-left">
+            <h2 class="section-title">Pre celú <span class="text-red">Rodinu</span></h2>
+            <div class="family-grid">
+              <div class="family-item">
+                <span class="family-icon">🤡</span>
+                <h5>Show klauna Pepeho</h5>
+              </div>
+              <div class="family-item">
+                <span class="family-icon">🫧</span>
+                <h5>Tradičná penová párty</h5>
+              </div>
+              <div class="family-item">
+                <span class="family-icon">🏰</span>
+                <h5>Skákacie hrady</h5>
+              </div>
+              <div class="family-item">
+                <span class="family-icon">🎨</span>
+                <h5>Maľovanie na tvár</h5>
+              </div>
+              <div class="family-item span-full mt-2">
+                <span class="family-icon">🍔</span>
+                <h5>Bohaté občerstvenie počas celého dňa</h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Tombola -->
+    <section class="section tombola-section text-center" id="tombola">
+      <div class="tombola-overlay"></div>
+      <div class="container position-relative reveal fade-up">
+        <h2 class="section-title text-white">Tombola, ktorá <span class="text-red">nemá obdobu!</span></h2>
+        <p class="tombola-text text-white">Stačí sa registrovať, odbehnúť svoju trasu a ste v hre! Naša tradične bohatá tombola čaká možno práve na vás.</p>
+        <div class="tombola-gifts mt-4">
+          <div class="gift-icon">🎁</div>
+          <div class="gift-icon delay-1 text-red">🏎️</div>
+          <div class="gift-icon delay-2">⌚</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section results-section bg-light" id="results">
+        <div class="container text-center reveal fade-up">
+            <h2 class="section-title">Výsledky <span class="text-red">Pretekov</span></h2>
+            <p>Výsledky posledných ročníkov a online priebežné výsledky garantované portálom SportSoft.</p>
+            <div class="results-iframe mt-medium">
+                <!-- Iframe placeholder for SportSoft results -->
+                <div class="iframe-placeholder">
+                    SportSoft Výsledková Listina
+                </div>
+            </div>
+            
+            <a href="https://sportsoft.cz" target="_blank" class="btn btn-primary mt-4">Všetky Výsledky (SportSoft)</a>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="section sponsors-section" id="sponsors">
+      <div class="container text-center reveal fade-up">
+        <h3 class="mb-medium">Naši Partneri a sponzori</h3>
+        <div class="sponsors-grid">
+          <div class="sponsor-logo">G-SHOCK</div>
+          <div class="sponsor-logo">Obec Trávnica</div>
+          <div class="sponsor-logo">SportSoft</div>
+          <div class="sponsor-logo">Partner 4</div>
+          <div class="sponsor-logo">Partner 5</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container text-center">
+        <h2 class="footer-title">G-SHOCK <span class="text-red">RUNDAY</span></h2>
+        <p>13. Jún 2026 | Areál ZŠ Trávnica</p>
+        <div class="footer-links mt-2">
+          <a href="https://registrace.sportsoft.cz/registration.aspx?e=3563" target="_blank">Registrácia</a>
+          <a href="#program">Behy</a>
+          <a href="#activities">Program</a>
+          <a href="#results">Výsledky</a>
+        </div>
+        <p class="copyright mt-4">&copy; 2026 G-Shock RunDay Trávnica. Všetky práva vyhradené.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
