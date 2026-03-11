@@ -1,12 +1,31 @@
-// --- Setup Countdown logic ---
+// --- Navbar Scroll Effect ---
 let lastScroll = 0;
 
 window.addEventListener("load", () => {
   lastScroll = window.scrollY;
 });
 
-const countdownDate = new Date("June 13, 2026 13:00:00").getTime();
 
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  const currentScroll = window.pageYOffset;
+
+  // Background change logic (keeping this to avoid breaking the design)
+  if (currentScroll > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+
+  // Visibility logic
+  if (currentScroll > lastScroll && currentScroll > 70) {
+    header.style.transform = "translateY(-100%)";
+  } else {
+    header.style.transform = "translateY(0)";
+  }
+
+  lastScroll = currentScroll;
+}, { passive: true });
 const interval = setInterval(function() {
   const now = new Date().getTime();
   const distance = countdownDate - now;
@@ -30,36 +49,7 @@ const interval = setInterval(function() {
   }
 }, 1000);
 
-// --- Navbar Scroll Effect ---
-const navbar = document.getElementById('navbar');
 
-function updateNavbar() {
-  const currentScroll = window.scrollY;
-  
-  // Background change logic
-  if (currentScroll > 10) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-
-  // Visibility logic (Hide on scroll down, Show on scroll up)
-  if (currentScroll > lastScroll && currentScroll > 80) {
-    // Scrolling down
-    navbar.style.transform = "translateY(-100%)";
-  } else {
-    // Scrolling up
-    navbar.style.transform = "translateY(0)";
-  }
-  
-  lastScroll = currentScroll;
-}
-
-// Initialize immediately so navbar never starts in wrong state
-updateNavbar();
-
-// Use passive: true - critical for smooth scroll performance on mobile
-window.addEventListener('scroll', updateNavbar, { passive: true });
 
 // --- Mobile Navigation ---
 const mobileBtn = document.getElementById('mobile-menu-btn');
