@@ -336,13 +336,13 @@ img {
 /* Hero Section */
 .hero {
   position: relative;
-  padding: 50px 0 80px;
+  padding: 100px 0 130px;
   display: flex;
   align-items: center;
   background-color: var(--c-dark);
   overflow: hidden;
   margin-top: calc(-1 * var(--nav-height)); /* Pull hero up behind the sticky navbar */
-  padding-top: calc(var(--nav-height) + 50px); /* Compensate with extra top padding */
+  padding-top: calc(var(--nav-height) + 100px); /* Compensate with extra top padding */
 }
 
 .hero-bg {
