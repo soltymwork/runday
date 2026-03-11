@@ -169,15 +169,15 @@ img {
 }
 
 .btn-grey {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(20, 20, 20, 0.95);
   color: var(--c-white);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
 }
 
 .btn-grey:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  border-color: var(--c-white);
+  background-color: rgba(10, 10, 10, 1);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn-grey-text {
@@ -251,8 +251,9 @@ img {
 .header-runner {
   display: flex;
   align-items: center;
-  margin-left: 1.5rem;
+  margin-left: 2rem;
   margin-right: auto;
+  pointer-events: none;
 }
 
 @media (max-width: 991px) {
@@ -438,6 +439,27 @@ img {
   width: 100%;
 }
 
+.hero-scroll-wrapper-centered {
+  position: absolute;
+  bottom: 8%; /* Adjust based on preference */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-scroll-wrapper-centered a {
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .hero-scroll-wrapper-centered {
+    bottom: 5%;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-actions {
     flex-direction: column;
@@ -504,17 +526,28 @@ img {
   .hero-title { font-size: 2.6rem; }
   .countdown-wrapper { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .header-runner {
-    position: static;
-    transform: none;
+    display: flex;
+    position: relative;
     order: 2;
-    margin: 0 auto 0 1rem;
+    margin: 0;
+    flex: 1;
+    justify-content: center;
+    height: 40px; /* Force height to prevent layout shifts */
+    overflow: hidden;
   }
   .nav-logo {
     order: 1;
     height: 40px !important;
+    flex-shrink: 0;
   }
   .mobile-menu-btn {
     order: 3;
+    margin-left: 1rem;
+    flex-shrink: 0;
+  }
+  .runner-gif {
+    height: 35px;
+    width: auto;
   }
   .gshock-countdown-logo { border-right: none; padding-right: 0; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.3); }
 }
