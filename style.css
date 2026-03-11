@@ -4,8 +4,8 @@
   --c-red-glow: rgba(227, 24, 55, 0.4);
   --c-red-dark: #C2132D;
   --c-white: #FFFFFF;
-  --c-black: #0d0d0d;
-  --c-dark: #161616;
+  --c-black: #141414;
+  --c-dark: #1b1b1b;
   --c-dark-gray: #2a2a2a;
   --c-gray: #333333;
   --c-light-gray: #F5F5F5;
@@ -220,9 +220,8 @@ img {
 }
 
 .header-runner {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-right: auto;
+  padding-right: 1.5rem;
   display: flex;
   align-items: center;
 }
