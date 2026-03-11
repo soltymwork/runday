@@ -22,7 +22,7 @@
   --nav-height: 60px;
   
   /* Transitions */
-  --transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 * {
@@ -37,8 +37,6 @@ body {
   color: var(--c-text);
   background-color: var(--c-black);
   line-height: 1.6;
-  padding-top: var(--nav-height);
-  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,13 +90,13 @@ img {
 }
 
 .section {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0;
   position: relative;
 }
 
 .section-title {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -238,9 +236,9 @@ img {
 
 /* Navbar */
 .navbar {
-  position: fixed;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
   height: var(--nav-height);
   background-color: var(--c-black);
@@ -251,8 +249,8 @@ img {
 }
 
 .navbar.scrolled {
-  background-color: rgba(10, 10, 10, 0.98);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+  background-color: rgba(10, 10, 10, 0.97);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -338,12 +336,13 @@ img {
 /* Hero Section */
 .hero {
   position: relative;
-  padding: 3rem 0;
+  padding: 50px 0 80px;
   display: flex;
   align-items: center;
   background-color: var(--c-dark);
   overflow: hidden;
-  margin-top: calc(-1 * var(--nav-height));
+  margin-top: calc(-1 * var(--nav-height)); /* Pull hero up behind the sticky navbar */
+  padding-top: calc(var(--nav-height) + 50px); /* Compensate with extra top padding */
 }
 
 .hero-bg {
@@ -401,9 +400,9 @@ img {
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 900;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -947,7 +946,7 @@ img {
   font-weight: bold;
   color: var(--c-white);
   filter: grayscale(100%);
-  transition: filter 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
@@ -967,9 +966,9 @@ img {
 
 .footer-title {
   font-family: var(--font-display);
-  font-size: 1.8rem;
-  margin-bottom: 0.3rem;
-  letter-spacing: 1px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
 }
 
 .footer p {
@@ -1000,7 +999,7 @@ img {
   color: #666;
   opacity: 0.5;
   font-size: 0.75rem !important;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 /* Animations (Reveal) */
@@ -1049,23 +1048,20 @@ img {
   }
   
   .nav-links {
-    position: fixed;
+    position: absolute;
     top: var(--nav-height);
-    left: 0;
+    left: -100%;
     width: 100%;
-    height: calc(100vh - var(--nav-height));
+    height: calc(100dvh - var(--nav-height)); /* dvh = dynamic viewport height, avoids address bar issues */
     background: rgba(11, 11, 11, 0.98);
     flex-direction: column;
     justify-content: center;
-    gap: 1.5rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    gap: 2rem;
+    transition: left 0.4s ease;
   }
   
   .nav-links.active {
-    opacity: 1;
-    visibility: visible;
+    left: 0;
   }
   
   .nav-item {
