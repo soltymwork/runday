@@ -23,13 +23,13 @@
           </a>
         </div>
         
+        <div class="header-runner">
+          <img src="./runner.gif" alt="Bežec" class="runner-gif">
+        </div>
         <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-btn">
           <span></span><span></span><span></span>
         </button>
         <nav class="nav-links" id="nav-links">
-          <div class="header-runner">
-            <img src="./runner.gif" alt="Bežec" class="runner-gif">
-          </div>
           <a href="#about" class="nav-item">O podujatí</a>
           <a href="#program" class="nav-item">Bežecký program</a>
           <a href="#map" class="nav-item">Mapa tratí</a>
@@ -89,11 +89,14 @@
             </div>
           </div>
 
-          <div class="hero-actions reveal fade-up" style="transition-delay: 500ms;">
+          <div class="hero-actions reveal fade-up" style="transition-delay: 500ms; justify-content: flex-start;">
             <a href="https://registrace.sportsoft.cz/registration.aspx?e=3563" target="_blank" class="btn btn-badge btn-large">
               SPUSTIŤ REGISTRÁCIU
             </a>
-            <a href="#about" class="btn btn-outline-white btn-large hero-scroll-btn">
+          </div>
+          
+          <div class="hero-scroll-wrapper reveal fade-up text-center" style="transition-delay: 700ms; margin-top: 3rem;">
+            <a href="#about" class="hero-scroll-btn-centered">
               BEŽ <span class="arrow-down">↓</span>
             </a>
           </div>
@@ -183,7 +186,7 @@
             <div class="activity-box">
               <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1000&auto=format&fit=crop');"></div>
               <div class="activity-content">
-                <h4>Hit Karola Duchoňa</h4>
+                <h4>Hity Karola Duchoňa</h4>
                 <p>Vynikajúca pocta legende! ĽUDO KURUC BAND zahrá najväčšie hity priamo po tombole.</p>
               </div>
             </div>
@@ -198,7 +201,7 @@
 
           <div class="activities-col reveal slide-left">
             <h2 class="section-title">Pre celú <span class="text-red">Rodinu</span></h2>
-            <ul class="check-list family-list">
+            <ul class="check-list runner-list family-list">
               <li class="reveal slide-right" style="transition-delay: 100ms;">Show klauna Pepeho</li>
               <li class="reveal slide-right" style="transition-delay: 200ms;">Tradičná penová párty</li>
               <li class="reveal slide-right" style="transition-delay: 300ms;">Skákacie hrady</li>

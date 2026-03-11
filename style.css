@@ -451,7 +451,7 @@ img {
   .hero-left-col { max-width: 65%; }
 }
 @media (max-width: 768px) {
-  .hero-color-overlay { width: 100%; background: linear-gradient(to bottom, rgba(227, 24, 55, 0.95) 0%, rgba(227, 24, 55, 0.9) 60%, transparent 100%); }
+  .hero-color-overlay { width: 100%; background: linear-gradient(to bottom, rgba(227, 24, 55, 0.8) 0%, rgba(227, 24, 55, 0.6) 40%, transparent 90%); }
   .hero-left-col { max-width: 100%; padding-right: 0; }
   .hero-bg { width: 100%; }
   .hero-title { font-size: 2.6rem; }
@@ -597,23 +597,25 @@ img {
   margin-top: 2rem;
 }
 
-.check-list li {
-  margin-bottom: 1rem;
-  padding-left: 2rem;
-  position: relative;
-}
-
 .check-list li::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 5px;
-  width: 20px;
-  height: 20px;
+  top: 0px;
+  width: 30px;
+  height: 30px;
   background-image: url('./runner.gif');
   background-size: contain;
   background-repeat: no-repeat;
   filter: brightness(0) invert(1);
+}
+
+.check-list li {
+  margin-bottom: 1.5rem;
+  padding-left: 2.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .video-container {
@@ -725,7 +727,26 @@ img {
   background-position: 0 0, 10px 10px;
 }
 
-/* Activities */
+.hero-scroll-btn-centered {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--c-white);
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: var(--transition);
+}
+
+.hero-scroll-btn-centered:hover {
+  color: var(--c-red);
+  transform: translateY(5px);
+}
+
+/* Utilities */
 .activity-box {
   display: flex;
   background: var(--c-dark-gray);
