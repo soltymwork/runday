@@ -1,4 +1,10 @@
 // --- Setup Countdown logic ---
+let lastScroll = 0;
+
+window.addEventListener("load", () => {
+  lastScroll = window.scrollY;
+});
+
 const countdownDate = new Date("June 13, 2026 13:00:00").getTime();
 
 const interval = setInterval(function() {
@@ -28,11 +34,25 @@ const interval = setInterval(function() {
 const navbar = document.getElementById('navbar');
 
 function updateNavbar() {
-  if (window.scrollY > 10) {
+  const currentScroll = window.scrollY;
+  
+  // Background change logic
+  if (currentScroll > 10) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
+
+  // Visibility logic (Hide on scroll down, Show on scroll up)
+  if (currentScroll > lastScroll && currentScroll > 80) {
+    // Scrolling down
+    navbar.style.transform = "translateY(-100%)";
+  } else {
+    // Scrolling up
+    navbar.style.transform = "translateY(0)";
+  }
+  
+  lastScroll = currentScroll;
 }
 
 // Initialize immediately so navbar never starts in wrong state

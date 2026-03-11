@@ -236,14 +236,14 @@ img {
 
 /* Navbar */
 .navbar {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: var(--nav-height);
   background-color: var(--c-black);
   z-index: 1000;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.3s ease, background-color 0.4s ease, box-shadow 0.4s ease;
   display: flex;
   align-items: center;
 }
