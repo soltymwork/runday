@@ -277,20 +277,20 @@ img {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 800px;
+  min-height: auto;
+  padding-top: calc(var(--nav-height) + 4rem);
+  padding-bottom: 5rem;
   display: flex;
   align-items: center;
   background-color: var(--c-dark);
   overflow: hidden;
-  padding-top: var(--nav-height);
 }
 
 .hero-bg {
   position: absolute;
   top: 0;
   right: 0;
-  width: 70%;
+  width: 100%;
   height: 100%;
   background-image: url('./hero-image.png');
   background-size: cover;
@@ -302,12 +302,10 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 60%;
+  width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--c-red-dark) 0%, var(--c-red) 100%);
+  background: linear-gradient(90deg, rgba(227, 24, 55, 1) 0%, rgba(227, 24, 55, 0.95) 30%, rgba(194, 19, 45, 0.6) 60%, transparent 100%);
   z-index: 2;
-  clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
-  box-shadow: 10px 0 50px rgba(0,0,0,0.5);
 }
 
 .hero-content {
@@ -337,7 +335,7 @@ img {
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 900;
   margin-bottom: 0.5rem;
   line-height: 1.1;
@@ -346,7 +344,7 @@ img {
 }
 
 .hero-date {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   font-family: var(--font-heading);
   margin-bottom: 0.2rem;
@@ -421,14 +419,14 @@ img {
 }
 
 @media (max-width: 1024px) {
-  .hero-color-overlay { width: 75%; clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%); }
+  .hero-color-overlay { background: linear-gradient(90deg, rgba(227, 24, 55, 1) 0%, rgba(227, 24, 55, 0.95) 45%, rgba(194, 19, 45, 0.4) 80%, transparent 100%); }
   .hero-left-col { max-width: 65%; }
 }
 @media (max-width: 768px) {
-  .hero-color-overlay { width: 100%; clip-path: none; opacity: 0.95; }
+  .hero-color-overlay { width: 100%; background: linear-gradient(to bottom, rgba(227, 24, 55, 0.9) 0%, rgba(194, 19, 45, 0.95) 100%); }
   .hero-left-col { max-width: 100%; padding-right: 0; }
   .hero-bg { width: 100%; }
-  .hero-title { font-size: 2.8rem; }
+  .hero-title { font-size: 2.6rem; }
   .countdown-wrapper { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .gshock-countdown-logo { border-right: none; padding-right: 0; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.3); }
 }
