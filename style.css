@@ -198,35 +198,58 @@ img {
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: var(--nav-height);
-  background: rgba(11, 11, 11, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: transparent;
+  padding: 1rem 0;
   z-index: 1000;
   transition: var(--transition);
 }
 
 .navbar.scrolled {
-  background: rgba(11, 11, 11, 0.95);
-  height: 70px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  background-color: rgba(10, 10, 10, 0.95);
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  position: relative;
 }
 
-.logo-text {
-  font-family: var(--font-display);
+.runner-track {
+  position: absolute;
+  left: 200px;
+  right: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.running-man {
+  font-size: 1.8rem;
+  animation: runAcross 15s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes runAcross {
+  0% { transform: translateX(-10vw); }
+  50% { transform: translateX(60vw); }
+  50.01% { transform: translateX(60vw) scaleX(-1); }
+  100% { transform: translateX(-10vw) scaleX(-1); }
+}
+
+.logo-link {
+  font-family: var(--font-heading);
   font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
   color: var(--c-white);
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -533,7 +556,7 @@ img {
 }
 
 .map-img-small {
-  max-width: 70%;
+  max-width: 90%;
   margin: 0 auto;
   display: block;
 }
