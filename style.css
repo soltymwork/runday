@@ -380,7 +380,7 @@ img {
 
 .gshock-countdown-logo {
   height: 60px;
-  filter: brightness(0) invert(1);
+  filter: none; /* Keeps original black color */
   padding-right: 2rem;
   border-right: 1px solid rgba(255,255,255,0.3);
 }
@@ -464,6 +464,29 @@ img {
   animation: scrollWheel 2s infinite;
 }
 
+.hero-scroll-btn {
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  background: var(--c-white);
+  color: var(--c-black);
+  border: none;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-scroll-btn:hover {
+  background: #EEE;
+  color: var(--c-red);
+}
+
+.arrow-down {
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
 @keyframes scrollWheel {
   0% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(15px); opacity: 0; }
@@ -484,6 +507,12 @@ img {
 
 .align-center {
   align-items: center;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 5;
 }
 
 /* About Section */
@@ -655,81 +684,26 @@ img {
   color: var(--c-red);
 }
 
-.family-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+.family-list {
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  list-style-type: none;
 }
 
-.family-item {
-  background: rgba(255,255,255,0.03);
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: all 0.3s ease;
+.family-list li {
+  margin-bottom: 1.5rem;
+  padding-left: 3rem;
+  position: relative;
 }
 
-.family-item:hover {
-  background: rgba(255,255,255,0.08);
-  transform: translateY(-5px);
-}
-
-.family-icon {
-  font-size: 2.5rem;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.family-item h5 {
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-.span-full {
-  grid-column: 1 / -1;
-  background: linear-gradient(145deg, rgba(227,24,55,0.1), transparent);
-  border-color: rgba(227,24,55,0.3);
-}
-
-/* Tombola */
-.tombola-section {
-  background-image: url('https://images.unsplash.com/photo-1513885535694-a1fa50209c1c?q=80&w=2000&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  padding: 8rem 0;
-}
-
-.tombola-overlay {
+.family-list li::before {
+  content: '👉';
   position: absolute;
-  top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(227,24,55,0.8), rgba(0,0,0,0.9));
-  z-index: 1;
+  font-size: 1.5rem;
 }
 
-.tombola-text {
-  font-size: 1.3rem;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
 
-.tombola-gifts {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  font-size: 4rem;
-}
-
-.gift-icon {
-  animation: bounce 2s infinite;
-}
-.delay-1 { animation-delay: 0.5s; }
-.delay-2 { animation-delay: 1s; }
 
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
