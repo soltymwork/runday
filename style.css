@@ -22,7 +22,7 @@
   --nav-height: 60px;
   
   /* Transitions */
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease;
 }
 
 * {
@@ -37,6 +37,8 @@ body {
   color: var(--c-text);
   background-color: var(--c-black);
   line-height: 1.6;
+  padding-top: var(--nav-height);
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -90,13 +92,13 @@ img {
 }
 
 .section {
-  padding: 3.5rem 0;
+  padding: 2.5rem 0;
   position: relative;
 }
 
 .section-title {
-  font-size: 3rem;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -135,6 +137,7 @@ img {
   background-color: var(--c-red-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px var(--c-red-glow);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-outline {
@@ -235,9 +238,9 @@ img {
 
 /* Navbar */
 .navbar {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: var(--nav-height);
   background-color: var(--c-black);
@@ -248,8 +251,8 @@ img {
 }
 
 .navbar.scrolled {
-  background-color: rgba(10, 10, 10, 0.97);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(10, 10, 10, 0.98);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
 }
 
 .nav-container {
@@ -335,13 +338,12 @@ img {
 /* Hero Section */
 .hero {
   position: relative;
-  padding: 50px 0 80px;
+  padding: 3rem 0;
   display: flex;
   align-items: center;
   background-color: var(--c-dark);
   overflow: hidden;
-  margin-top: calc(-1 * var(--nav-height)); /* Pull hero up behind the sticky navbar */
-  padding-top: calc(var(--nav-height) + 50px); /* Compensate with extra top padding */
+  margin-top: calc(-1 * var(--nav-height));
 }
 
 .hero-bg {
@@ -399,9 +401,9 @@ img {
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 900;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -945,7 +947,7 @@ img {
   font-weight: bold;
   color: var(--c-white);
   filter: grayscale(100%);
-  transition: all 0.3s;
+  transition: filter 0.3s ease, color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
 
@@ -965,9 +967,9 @@ img {
 
 .footer-title {
   font-family: var(--font-display);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: 2px;
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: 1px;
 }
 
 .footer p {
@@ -998,7 +1000,7 @@ img {
   color: #666;
   opacity: 0.5;
   font-size: 0.75rem !important;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 /* Animations (Reveal) */
@@ -1049,18 +1051,21 @@ img {
   .nav-links {
     position: fixed;
     top: var(--nav-height);
-    left: -100%;
+    left: 0;
     width: 100%;
     height: calc(100vh - var(--nav-height));
     background: rgba(11, 11, 11, 0.98);
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
-    transition: 0.4s ease;
+    gap: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
   
   .nav-links.active {
-    left: 0;
+    opacity: 1;
+    visibility: visible;
   }
   
   .nav-item {
