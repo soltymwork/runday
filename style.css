@@ -40,7 +40,10 @@ body {
   color: var(--c-text);
   background-color: var(--c-black);
   line-height: 1.6;
-  overflow-x: hidden;
+  /* Using overflow: clip instead of overflow-x: hidden.
+     overflow-x: hidden on body breaks position:fixed on Android (navbar disappears).
+     overflow: clip achieves the same result without creating a scroll container. */
+  overflow-x: clip;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -680,7 +683,7 @@ img {
 }
 
 .map-img-small {
-  max-width: 50%;
+  max-width: 80%; /* Enlarged from 50% */
   margin: 0 auto;
   display: block;
 }
