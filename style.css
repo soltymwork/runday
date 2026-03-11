@@ -19,7 +19,7 @@
 
   /* Layout */
   --container-width: 1200px;
-  --nav-height: 80px;
+  --nav-height: 60px;
   
   /* Transitions */
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -245,11 +245,13 @@ img {
   top: 0;
   left: 0;
   width: 100%;
+  height: var(--nav-height); /* Explicit height prevents layout recalculation */
   background-color: transparent;
-  padding: 1rem 0; /* Keep padding constant - changing it on scroll causes layout shifts */
+  padding: 0 0; /* No padding - height is fixed */
   z-index: 10000;
   transition: background-color 0.4s ease;
-  /* NO will-change, NO transform - these break position:fixed on Android */
+  display: flex;
+  align-items: center;
 }
 
 .navbar.scrolled {
