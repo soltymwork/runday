@@ -33,7 +33,6 @@
 
 html {
   scroll-behavior: smooth;
-  height: 100%;
 }
 
 body {
@@ -42,7 +41,6 @@ body {
   background-color: var(--c-black);
   line-height: 1.6;
   overflow-x: hidden;
-  min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -218,8 +216,8 @@ img {
 }
 
 .btn-large {
-  padding: 1.2rem 3rem !important;
-  font-size: 1.2rem !important;
+  padding: 0.7rem 1.8rem;
+  font-size: 1rem;
 }
 
 .btn-small {
@@ -241,21 +239,20 @@ img {
 
 /* Navbar */
 .navbar {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: auto !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: transparent;
-  padding: 1.2rem 0;
-  z-index: 999999 !important;
-  transition: background-color 0.4s ease;
+  padding: 1rem 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 .navbar.scrolled {
-  background-color: rgba(15, 15, 15, 0.98) !important;
-  padding: 0.8rem 0;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.8);
+  background-color: rgba(10, 10, 10, 0.98);
+  padding: 0.6rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -359,10 +356,8 @@ img {
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 100vh; /* Full screen height */
-  min-height: 100dvh; /* Mobile screen height */
-  padding-top: 100px;
-  padding-bottom: 80px;
+  min-height: 700px; /* Stable height */
+  padding: 120px 0 100px;
   display: flex;
   align-items: center;
   background-color: var(--c-dark);
@@ -462,13 +457,27 @@ img {
 
 .hero-scroll-wrapper-centered {
   position: absolute;
-  bottom: 20px !important; /* Forces it to the absolute bottom */
+  bottom: 25px;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
-  z-index: 20;
+  z-index: 100;
   pointer-events: none;
+}
+
+.hero-scroll-link-grey {
+  color: #aaaaaa !important;
+  text-decoration: none !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  pointer-events: auto;
 }
 
 .hero-scroll-wrapper-centered a {
