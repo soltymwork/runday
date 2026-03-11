@@ -99,13 +99,30 @@ document.querySelectorAll('.hero .reveal').forEach(el => {
 const sections = document.querySelectorAll('section');
 const navItems = document.querySelectorAll('.nav-item');
 
+// Cache section positions - reading offsetTop on every scroll causes forced reflows
+let sectionPositions = [];
+
+function cacheSectionPositions() {
+  sectionPositions = [];
+  sections.forEach(section => {
+    sectionPositions.push({
+      id: section.getAttribute('id'),
+      top: section.offsetTop,
+      height: section.clientHeight
+    });
+  });
+}
+
+// Cache on load and resize only
+cacheSectionPositions();
+window.addEventListener('resize', cacheSectionPositions, { passive: true });
+
 window.addEventListener('scroll', () => {
   let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
-      current = section.getAttribute('id');
+  const scrollY = window.scrollY;
+  sectionPositions.forEach(pos => {
+    if (scrollY >= (pos.top - pos.height / 3)) {
+      current = pos.id;
     }
   });
   

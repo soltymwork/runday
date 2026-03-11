@@ -33,7 +33,6 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden; /* On html, this clips the viewport - does NOT break position:fixed */
 }
 
 body {
@@ -96,7 +95,7 @@ img {
 }
 
 .section {
-  padding: 6rem 0;
+  padding: 3.5rem 0;
   position: relative;
 }
 
@@ -268,6 +267,7 @@ img {
 
 .nav-logo {
   filter: brightness(0.9);
+  margin-top: 4px; /* push logo down slightly */
 }
 
 
@@ -964,7 +964,7 @@ img {
 .footer {
   background-color: var(--c-dark);
   color: var(--c-white);
-  padding: 4rem 0 2rem;
+  padding: 2rem 0 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -1002,14 +1002,15 @@ img {
 .copyright {
   color: #666;
   opacity: 0.5;
-  font-size: 0.8rem !important;
-  margin-top: 3rem;
+  font-size: 0.75rem !important;
+  margin-top: 1.5rem;
 }
 
 /* Animations (Reveal) */
 .reveal {
   opacity: 0;
-  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+  /* CRITICAL: only transition opacity and transform - 'transition: all' causes layout shifts */
+  transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
 }
 
 .reveal.active {
