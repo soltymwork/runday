@@ -38,60 +38,57 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-      <div class="hero-bg-overlay"></div>
+      <!-- Background Image -->
+      <div class="hero-bg"></div>
+      
+      <!-- Angled Color Overlay -->
+      <div class="hero-color-overlay"></div>
       
       <div class="container hero-content">
-        <div class="hero-badge reveal fade-up">5. ROČNÍK</div>
-        <h1 class="hero-title reveal fade-up" style="transition-delay: 100ms;">
-          Bežecký sviatok v <span class="text-red">Trávnici!</span>
-        </h1>
-        <p class="hero-subtitle reveal fade-up" style="transition-delay: 200ms;">
-          Pripravte si tenisky a dobrú náladu. Čaká nás jubilejný 5. ročník G-Shock Runday, kde športové výkony strieda skvelá zábava pre celú rodinu.
-        </p>
-        
-        <div class="hero-details reveal fade-up" style="transition-delay: 300ms;">
-          <div class="detail-item">
-            <span class="detail-icon">📅</span>
-            <span class="detail-text">13. jún 2026</span>
+        <div class="hero-left-col">
+          <div class="hero-badge reveal fade-up">5. ročník</div>
+          <h1 class="hero-title reveal fade-up" style="transition-delay: 100ms;">
+            G-SHOCK RUNDAY<br>TRÁVNICA 2026
+          </h1>
+          
+          <div class="hero-date reveal fade-up" style="transition-delay: 200ms;">
+            13. júna 2026
           </div>
-          <div class="detail-item">
-            <span class="detail-icon">📍</span>
-            <span class="detail-text">Areál ZŠ Trávnica</span>
+          <div class="hero-location reveal fade-up" style="transition-delay: 200ms;">
+            Areál ZŠ Trávnica
           </div>
-        </div>
 
-        <div class="hero-actions reveal fade-up" style="transition-delay: 400ms;">
-          <a href="https://registrace.sportsoft.cz/registration.aspx?e=3563" target="_blank" class="btn btn-primary btn-large glow-effect">
-            SPUSTIŤ REGISTRÁCIU
-          </a>
-          <a href="#program" class="btn btn-outline btn-large">ZISTIŤ VIAC</a>
-        </div>
-
-        <!-- Countdown Wrapper -->
-        <div class="countdown-wrapper reveal fade-up" style="transition-delay: 500ms;">
-          <div class="countdown-partner">
-            <img src="./gshock-logo.png" alt="G-SHOCK" class="gshock-countdown-logo" style="height: 40px; margin-right: 2rem; border-right: 1px solid rgba(255,255,255,0.2); padding-right: 2rem;">
+          <div class="hero-countdown-label reveal fade-up" style="transition-delay: 300ms;">Beh začne o:</div>
+          
+          <!-- Countdown Wrapper -->
+          <div class="countdown-wrapper reveal fade-up" style="transition-delay: 400ms;">
+            <div class="countdown-partner">
+              <img src="./gshock-logo.png" alt="G-SHOCK" class="gshock-countdown-logo">
+            </div>
+            <div class="countdown-timer" id="countdown">
+              <div class="time-box">
+                <span class="time-val" id="cd-days">00</span>
+                <span class="time-label">Dní</span>
+              </div>
+              <div class="time-box">
+                <span class="time-val" id="cd-hours">00</span>
+                <span class="time-label">Hodín</span>
+              </div>
+              <div class="time-box">
+                <span class="time-val" id="cd-minutes">00</span>
+                <span class="time-label">Minút</span>
+              </div>
+              <div class="time-box">
+                <span class="time-val" id="cd-seconds">00</span>
+                <span class="time-label">Sekúnd</span>
+              </div>
+            </div>
           </div>
-          <div class="countdown-timer" id="countdown">
-            <div class="time-box">
-              <span class="time-val" id="cd-days">00</span>
-              <span class="time-label">Dní</span>
-            </div>
-            <div class="time-divider">:</div>
-            <div class="time-box">
-              <span class="time-val" id="cd-hours">00</span>
-              <span class="time-label">Hodín</span>
-            </div>
-            <div class="time-divider">:</div>
-            <div class="time-box">
-              <span class="time-val" id="cd-minutes">00</span>
-              <span class="time-label">Minút</span>
-            </div>
-            <div class="time-divider">:</div>
-            <div class="time-box text-red">
-              <span class="time-val" id="cd-seconds">00</span>
-              <span class="time-label">Sekúnd</span>
-            </div>
+
+          <div class="hero-actions reveal fade-up" style="transition-delay: 500ms;">
+            <a href="https://registrace.sportsoft.cz/registration.aspx?e=3563" target="_blank" class="btn btn-outline btn-large">
+              ROZBEHNI TO A REGISTRUJ SA
+            </a>
           </div>
         </div>
       </div>
