@@ -219,6 +219,10 @@ img {
   position: relative;
 }
 
+.nav-logo {
+  filter: brightness(0.9);
+}
+
 .header-runner {
   margin-right: auto;
   padding-right: 1.5rem;
@@ -404,7 +408,7 @@ img {
 
 .gshock-countdown-logo {
   height: 60px;
-  filter: none; /* Keeps original black color */
+  filter: brightness(0.9); /* Keeps original black color but softer */
   padding-right: 2rem;
   border-right: 1px solid rgba(255,255,255,0.3);
 }
@@ -447,11 +451,21 @@ img {
   .hero-left-col { max-width: 65%; }
 }
 @media (max-width: 768px) {
-  .hero-color-overlay { width: 100%; background: linear-gradient(to bottom, rgba(227, 24, 55, 0.9) 0%, rgba(194, 19, 45, 0.95) 100%); }
+  .hero-color-overlay { width: 100%; background: linear-gradient(to bottom, rgba(227, 24, 55, 0.95) 0%, rgba(227, 24, 55, 0.9) 60%, transparent 100%); }
   .hero-left-col { max-width: 100%; padding-right: 0; }
   .hero-bg { width: 100%; }
   .hero-title { font-size: 2.6rem; }
   .countdown-wrapper { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .header-runner {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+  }
+  .nav-logo {
+    height: 40px !important;
+  }
   .gshock-countdown-logo { border-right: none; padding-right: 0; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.3); }
 }
 
@@ -590,12 +604,16 @@ img {
 }
 
 .check-list li::before {
-  content: '✓';
+  content: '';
   position: absolute;
   left: 0;
-  color: var(--c-red);
-  font-weight: bold;
-  font-size: 1.2rem;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background-image: url('./runner.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: brightness(0) invert(1);
 }
 
 .video-container {
