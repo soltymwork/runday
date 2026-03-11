@@ -33,6 +33,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* On html, this clips the viewport - does NOT break position:fixed */
 }
 
 body {
@@ -40,10 +41,8 @@ body {
   color: var(--c-text);
   background-color: var(--c-black);
   line-height: 1.6;
-  /* Using overflow: clip instead of overflow-x: hidden.
-     overflow-x: hidden on body breaks position:fixed on Android (navbar disappears).
-     overflow: clip achieves the same result without creating a scroll container. */
-  overflow-x: clip;
+  /* NO overflow on body - overflow on body creates a scroll container which
+     breaks position:fixed on Android. overflow-x is handled on html above. */
 }
 
 h1, h2, h3, h4, h5, h6 {
