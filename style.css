@@ -43,7 +43,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
+  font-weight: 700;
   color: var(--c-white);
   line-height: 1.2;
 }
@@ -520,7 +521,7 @@ img {
   border-radius: 12px;
   text-align: center;
   color: var(--c-white);
-  border: 1px solid rgba(255,255,255,0.05);
+  border: none;
 }
 
 .map-img {
@@ -529,6 +530,12 @@ img {
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
+}
+
+.map-img-small {
+  max-width: 70%;
+  margin: 0 auto;
+  display: block;
 }
 
 .map-img:hover {
