@@ -40,8 +40,7 @@ body {
   color: var(--c-text);
   background-color: var(--c-black);
   line-height: 1.6;
-  /* NO overflow on body - overflow on body creates a scroll container which
-     breaks position:fixed on Android. overflow-x is handled on html above. */
+  padding-top: var(--nav-height); /* Offset for fixed navbar */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -244,10 +243,9 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--nav-height); /* Explicit height prevents layout recalculation */
+  height: var(--nav-height);
   background-color: transparent;
-  padding: 0 0; /* No padding - height is fixed */
-  z-index: 10000;
+  z-index: 1000;
   transition: background-color 0.4s ease;
   display: flex;
   align-items: center;
@@ -341,8 +339,7 @@ img {
 /* Hero Section */
 .hero {
   position: relative;
-  /* No min-height, let content define the height naturally */
-  padding: 110px 0 80px;
+  padding: 50px 0 80px; /* Reduced top padding since body already has padding-top */
   display: flex;
   align-items: center;
   background-color: var(--c-dark);
