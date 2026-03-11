@@ -4,9 +4,9 @@
   --c-red-glow: rgba(227, 24, 55, 0.4);
   --c-red-dark: #C2132D;
   --c-white: #FFFFFF;
-  --c-black: #0B0B0B;
-  --c-dark: #121212;
-  --c-dark-gray: #1E1E1E;
+  --c-black: #0d0d0d;
+  --c-dark: #161616;
+  --c-dark-gray: #2a2a2a;
   --c-gray: #333333;
   --c-light-gray: #F5F5F5;
   --c-text: #E0E0E0;
@@ -219,28 +219,17 @@ img {
   position: relative;
 }
 
-.runner-track {
+.header-runner {
   position: absolute;
-  left: 200px;
-  right: 20px;
-  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
-  overflow: hidden;
-  pointer-events: none;
 }
 
-.running-man {
-  font-size: 1.8rem;
-  animation: runAcross 15s linear infinite;
-  white-space: nowrap;
-}
-
-@keyframes runAcross {
-  0% { transform: translateX(-10vw); }
-  50% { transform: translateX(60vw); }
-  50.01% { transform: translateX(60vw) scaleX(-1); }
-  100% { transform: translateX(-10vw) scaleX(-1); }
+.runner-gif {
+  height: 45px;
+  filter: brightness(0) invert(1);
 }
 
 .logo-link {
@@ -556,7 +545,7 @@ img {
 }
 
 .map-img-small {
-  max-width: 90%;
+  max-width: 50%;
   margin: 0 auto;
   display: block;
 }
@@ -831,21 +820,37 @@ img {
 
 /* Footer */
 .footer {
-  background: var(--c-black);
+  background-color: var(--c-dark);
+  color: var(--c-white);
   padding: 4rem 0 2rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-title {
   font-family: var(--font-display);
+  font-size: 2rem;
   margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.footer p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
 }
 
 .footer-links {
   display: flex;
+  gap: 1.5rem;
   justify-content: center;
-  gap: 2rem;
   flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: var(--transition);
 }
 
 .footer-links a:hover {
@@ -854,7 +859,9 @@ img {
 
 .copyright {
   color: #666;
-  font-size: 0.9rem;
+  opacity: 0.5;
+  font-size: 0.8rem !important;
+  margin-top: 3rem;
 }
 
 /* Animations (Reveal) */
