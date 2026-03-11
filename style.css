@@ -169,15 +169,14 @@ img {
 }
 
 .btn-grey {
-  background-color: rgba(20, 20, 20, 0.95);
+  background-color: #4a4a4a; /* Darker Matte Grey */
   color: var(--c-white);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(15px);
 }
 
 .btn-grey:hover {
-  background-color: rgba(10, 10, 10, 1);
-  border-color: rgba(255, 255, 255, 0.4);
+  background-color: #333333;
+  border-color: var(--c-white);
 }
 
 .btn-grey-text {
@@ -221,13 +220,15 @@ img {
 
 /* Navbar */
 .navbar {
-  position: fixed;
-  top: 0;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0;
   width: 100%;
   background-color: transparent;
   padding: 1rem 0;
-  z-index: 1000;
+  z-index: 10000;
   transition: var(--transition);
+  transform: translateZ(0); /* Fix for mobile flickering/hiding */
 }
 
 .navbar.scrolled {
@@ -441,7 +442,7 @@ img {
 
 .hero-scroll-wrapper-centered {
   position: absolute;
-  bottom: 8%; /* Adjust based on preference */
+  bottom: 4%; /* Moved lower */
   left: 0;
   width: 100%;
   display: flex;
