@@ -1271,8 +1271,8 @@ font-size: 1.5rem;
 
 /* Footer kontakt */
 .footer-contact {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
   border-top: 1px solid rgba(255,255,255,0.08);
   font-size: 0.9rem;
   line-height: 1.9;
