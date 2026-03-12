@@ -1292,6 +1292,17 @@ font-size: 1.5rem;
   color: var(--c-red);
 }
 
+/* About sekcia — dve videa vedľa textu, zarovnané hore */
+.about-section .grid-2 {
+  align-items: start;
+}
+
+.about-media {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 /* FIX: overflow:hidden na sekciách so slide animáciami
    iOS Safari ignoruje overflow-x na body/html - musí byť na sekcii.
    Rovnaké riešenie ako #about { overflow:hidden } v Soltym projekte.
