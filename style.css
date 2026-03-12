@@ -13,7 +13,7 @@
 --c-text: #E0E0E0;
 
 /* Typography */
---font-primary: 'Inter', sans-serif;
+--font-primary: 'Plus Jakarta Sans', sans-serif;
 --font-display: 'Orbitron', sans-serif;
 --font-heading: 'Outfit', sans-serif;
 
@@ -676,7 +676,7 @@ margin-top: 2rem;
 }
 
 .runner-list li {
-margin-bottom: 2rem !important;
+margin-bottom: 0.7rem !important;
 padding-left: 3.5rem !important;
 position: relative;
 display: flex;
