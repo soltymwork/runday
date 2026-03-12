@@ -683,6 +683,7 @@ display: flex;
 align-items: center;
 min-height: 40px;
 list-style-type: none !important;
+font-weight: 700;
 }
 
 .runner-list li::before {
@@ -1107,6 +1108,30 @@ font-size: 1.5rem;
 .countdown-timer { gap: 0.5rem; }
 .family-grid { grid-template-columns: 1fr; }
 .tombola-gifts { font-size: 3rem; gap: 1.5rem; }
+}
+
+/* Activities kolumny — flex na plnú výšku */
+.activities-section .grid-2 {
+  align-items: stretch;
+}
+
+.activities-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Zoznam v pravom stĺpci sa roztiahne na plnú výšku stĺpca */
+.activities-col .runner-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 0;
+}
+
+/* Runner-list li margin pri space-between nepotrebujeme */
+.activities-col .runner-list li {
+  margin-bottom: 0 !important;
 }
 
 /* FIX: overflow:hidden na sekciách so slide animáciami
