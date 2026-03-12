@@ -10,7 +10,7 @@ window.addEventListener("scroll", () => {
     header.classList.remove('scrolled');
   }
 }, { passive: true });
-const countdownDate = new Date("June 13, 2026 13:00:00").getTime();
+const countdownDate = new Date("2026-06-13T13:00:00").getTime();
 
 const interval = setInterval(function() {
   const now = new Date().getTime();
