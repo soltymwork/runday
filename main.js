@@ -1,11 +1,4 @@
 // --- Navbar Scroll Effect ---
-let lastScroll = 0;
-
-window.addEventListener("load", () => {
-  lastScroll = window.scrollY;
-});
-
-
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
   const currentScroll = window.pageYOffset;
@@ -16,15 +9,6 @@ window.addEventListener("scroll", () => {
   } else {
     header.classList.remove('scrolled');
   }
-
-  // Visibility logic
-  if (currentScroll > lastScroll && currentScroll > 70) {
-    header.style.transform = "translateY(-100%)";
-  } else {
-    header.style.transform = "translateY(0)";
-  }
-
-  lastScroll = currentScroll;
 }, { passive: true });
 const interval = setInterval(function() {
   const now = new Date().getTime();
