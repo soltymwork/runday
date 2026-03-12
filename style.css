@@ -37,7 +37,6 @@ color: var(--c-text);
 background-color: var(--c-black);
 line-height: 1.6;
 padding-top: 70px;
-overflow-x: hidden; /* FIX: odsekne horizontálny presah z .slide-left/.slide-right animácií */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1108,4 +1107,16 @@ font-size: 1.5rem;
 .countdown-timer { gap: 0.5rem; }
 .family-grid { grid-template-columns: 1fr; }
 .tombola-gifts { font-size: 3rem; gap: 1.5rem; }
+}
+
+/* FIX: overflow:hidden na sekciách so slide animáciami
+   iOS Safari ignoruje overflow-x na body/html - musí byť na sekcii.
+   Rovnaké riešenie ako #about { overflow:hidden } v Soltym projekte.
+   Zabraňuje translateX(-50px / +50px) rozhadzovať position:fixed navbar. */
+.about-section,
+.program-section,
+.activities-section,
+.results-section,
+.sponsors-section {
+  overflow: hidden;
 }
