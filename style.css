@@ -675,7 +675,7 @@ img {
 }
 
 .runner-list li {
-  margin-bottom: 1.2rem !important;
+  margin-bottom: 0.7rem !important;
   padding-left: 3.5rem !important;
   position: relative;
   display: flex;
@@ -705,7 +705,7 @@ img {
 }
 
 .check-list:not(.runner-list) li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   padding-left: 2rem;
   position: relative;
 }
