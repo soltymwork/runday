@@ -241,9 +241,9 @@ top: 0;
 left: 0;
 width: 100%;
 height: var(--nav-height);
-background-color: var(--c-black);
+background-color: transparent;
 z-index: 1000;
-/* FIX: odstránený transform z transition – spôsoboval skákanie navbaru pri prvom scrolle na mobile */
+/* FIX: bez transform v transition – zabraňuje skákaniu na mobile */
 transition: background-color 0.4s ease, box-shadow 0.4s ease;
 display: flex;
 align-items: center;
