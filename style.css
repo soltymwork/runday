@@ -771,13 +771,14 @@ box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
 
 .highlight-card {
-background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-border-color: rgba(227, 24, 55, 0.4);
+background: linear-gradient(145deg, #1f1214, #0d0d0d);
+border-color: var(--c-red);
+box-shadow: 0 15px 30px var(--c-red-glow);
 }
 
 .highlight-card:hover {
 border-color: var(--c-red);
-box-shadow: 0 15px 30px var(--c-red-glow);
+box-shadow: 0 20px 40px var(--c-red-glow);
 }
 
 .card-badge {
