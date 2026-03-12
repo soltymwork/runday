@@ -1134,6 +1134,60 @@ font-size: 1.5rem;
   margin-bottom: 0 !important;
 }
 
+/* Sponsors Slider / Marquee */
+.sponsors-section {
+  padding-bottom: 3rem;
+}
+
+.sponsors-slider {
+  overflow: hidden;
+  width: 100%;
+  padding: 1.5rem 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.sponsors-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.sponsors-track:hover {
+  animation-play-state: paused;
+}
+
+.sponsor-item {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-white);
+  opacity: 0.6;
+  white-space: nowrap;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0 2.5rem;
+  border-right: 1px solid rgba(255,255,255,0.15);
+  transition: opacity 0.3s ease, color 0.3s ease;
+  cursor: default;
+}
+
+.sponsor-item:last-child {
+  border-right: none;
+}
+
+.sponsor-item:hover {
+  opacity: 1;
+  color: var(--c-red);
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* FIX: overflow:hidden na sekciách so slide animáciami
    iOS Safari ignoruje overflow-x na body/html - musí byť na sekcii.
    Rovnaké riešenie ako #about { overflow:hidden } v Soltym projekte.
