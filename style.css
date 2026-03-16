@@ -1330,7 +1330,25 @@ font-size: 1.5rem;
 }
 
 @media (max-width: 768px) {
-  .hero-title-row { gap: 0.8rem; }
+  .hero-title-row {
+    gap: 0.8rem;
+  }
+  .hero-title {
+    white-space: normal;
+    font-size: 2.2rem;
+  }
+  .hero-medal {
+    height: 4.84rem; /* 2.2rem × 1.1 × 2 */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-medal {
+    height: 3.96rem; /* 1.8rem × 1.1 × 2 */
+  }
 }
 
 
