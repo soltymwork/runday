@@ -1313,19 +1313,16 @@ font-size: 1.5rem;
 }
 
 .hero-medal {
-  height: 95px;
+  height: 80px;
   width: auto;
   border-radius: 0 !important;
   /* Radial mask — stred ostrý, okraje sa plynule strácajú do pozadia */
-  -webkit-mask-image: radial-gradient(ellipse 75% 80% at center, black 30%, transparent 75%);
-  mask-image: radial-gradient(ellipse 75% 80% at center, black 30%, transparent 75%);
-  /* Blur na okrajoch pre extra jemnosť */
-  filter: blur(0px) drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.6));
 }
 
 @media (max-width: 768px) {
   .hero-medal {
-    height: 70px;
+    height: 60px;
   }
 }
 
