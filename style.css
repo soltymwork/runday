@@ -1363,3 +1363,29 @@ font-size: 1.5rem;
 .sponsors-section {
   overflow: hidden;
 }
+
+/* Plagát v about sekcii */
+.poster-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin-right: auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 2;
+}
+
+/* Videá vedľa seba */
+.videos-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .videos-row {
+    grid-template-columns: 1fr;
+  }
+}
