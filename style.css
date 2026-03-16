@@ -1304,32 +1304,30 @@ font-size: 1.5rem;
   gap: 1.5rem;
 }
 
-/* Hero — medaila pozdĺž nadpisu */
-.hero-main-row {
+/* Hero — medaila vedľa nadpisu, zvyšok pod ňou */
+.hero-title-row {
   display: flex;
-  align-items: center;
-  gap: 1.8rem;
+  align-items: stretch;
+  gap: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
-.hero-text-col {
-  flex: 1;
+.hero-medal-wrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .hero-medal {
-  height: 220px;
   width: auto;
-  flex-shrink: 0;
+  height: 100%;
+  object-fit: contain;
   border-radius: 0 !important;
   filter: drop-shadow(0 8px 24px rgba(0,0,0,0.7));
 }
 
 @media (max-width: 768px) {
-  .hero-main-row { gap: 1rem; }
-  .hero-medal { height: 150px; }
-}
-
-@media (max-width: 480px) {
-  .hero-medal { height: 120px; }
+  .hero-title-row { gap: 0.8rem; }
 }
 
 
