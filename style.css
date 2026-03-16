@@ -1304,6 +1304,33 @@ font-size: 1.5rem;
   gap: 1.5rem;
 }
 
+/* Hero — medaila vedľa badge */
+.hero-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-medal {
+  height: 130px;
+  width: auto;
+  border-radius: 0 !important;
+  filter: drop-shadow(0 6px 20px rgba(0,0,0,0.5));
+  animation: medalFloat 4s ease-in-out infinite;
+}
+
+@keyframes medalFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@media (max-width: 768px) {
+  .hero-medal {
+    height: 90px;
+  }
+}
+
 /* FIX: overflow:hidden na sekciách so slide animáciami
    iOS Safari ignoruje overflow-x na body/html - musí byť na sekcii.
    Rovnaké riešenie ako #about { overflow:hidden } v Soltym projekte.
