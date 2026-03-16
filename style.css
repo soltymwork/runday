@@ -406,6 +406,7 @@ margin-bottom: 0.5rem;
 line-height: 1.1;
 text-transform: uppercase;
 letter-spacing: 1px;
+white-space: nowrap;
 }
 
 .hero-date {
@@ -1307,7 +1308,7 @@ font-size: 1.5rem;
 /* Hero — medaila vedľa nadpisu, zvyšok pod ňou */
 .hero-title-row {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   gap: 1.2rem;
   margin-bottom: 0.5rem;
 }
@@ -1320,10 +1321,12 @@ font-size: 1.5rem;
 
 .hero-medal {
   width: auto;
-  height: 100%;
+  height: 6.6rem;
   object-fit: contain;
+  object-position: center;
   border-radius: 0 !important;
   filter: drop-shadow(0 8px 24px rgba(0,0,0,0.7));
+  align-self: flex-start;
 }
 
 @media (max-width: 768px) {
