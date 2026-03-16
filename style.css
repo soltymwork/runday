@@ -1389,3 +1389,74 @@ font-size: 1.5rem;
     grid-template-columns: 1fr;
   }
 }
+
+/* Sponzor marquee slider */
+.sponsors-slider {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.sponsors-track {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.sponsors-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.sponsors-track .sponsor-logo {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--c-white);
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s;
+  cursor: default;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.sponsors-track .sponsor-logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 0;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+.sponsors-track .sponsor-logo:hover,
+.sponsors-track .sponsor-logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Plagát pod about sekciou */
+.poster-row {
+  margin-top: 3rem;
+}
+
+.poster-row .poster-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
