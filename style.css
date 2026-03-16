@@ -1313,21 +1313,19 @@ font-size: 1.5rem;
 }
 
 .hero-medal {
-  height: 130px;
+  height: 95px;
   width: auto;
   border-radius: 0 !important;
-  filter: drop-shadow(0 6px 20px rgba(0,0,0,0.5));
-  animation: medalFloat 4s ease-in-out infinite;
-}
-
-@keyframes medalFloat {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
+  /* Radial mask — stred ostrý, okraje sa plynule strácajú do pozadia */
+  -webkit-mask-image: radial-gradient(ellipse 75% 80% at center, black 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 75% 80% at center, black 30%, transparent 75%);
+  /* Blur na okrajoch pre extra jemnosť */
+  filter: blur(0px) drop-shadow(0 2px 8px rgba(0,0,0,0.3));
 }
 
 @media (max-width: 768px) {
   .hero-medal {
-    height: 90px;
+    height: 70px;
   }
 }
 
