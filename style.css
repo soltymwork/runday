@@ -406,6 +406,7 @@ margin-bottom: 0.5rem;
 line-height: 1.1;
 text-transform: uppercase;
 letter-spacing: 1px;
+white-space: nowrap;
 }
 
 .hero-date {
@@ -1314,4 +1315,83 @@ font-size: 1.5rem;
 .results-section,
 .sponsors-section {
   overflow: hidden;
+}
+
+/* ── Medaila vedľa H1 ── */
+.hero-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-medal-wrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Desktop: výška = 2 riadky H1 (3rem × 1.1 × 2) */
+.hero-medal {
+  width: auto;
+  height: 6.6rem;
+  object-fit: contain;
+  border-radius: 0 !important;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.7));
+}
+
+/* Mobile: medaila sa natiahne na výšku celého zalomeného H1 */
+@media (max-width: 768px) {
+  .hero-title-row {
+    gap: 0.8rem;
+    align-items: stretch;
+  }
+  .hero-title {
+    white-space: normal;
+  }
+  .hero-medal-wrap {
+    display: flex;
+    align-items: stretch;
+    flex-shrink: 0;
+    width: 72px;
+  }
+  .hero-medal {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center top;
+  }
+}
+
+/* ── Plagát — about sekcia ── */
+.poster-row {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.poster-wrap {
+  position: relative;
+  display: inline-block;
+  max-width: 600px;
+  width: 100%;
+}
+.poster-wrap::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--c-red);
+  border-radius: 12px;
+  z-index: 0;
+}
+.poster-wrap .poster-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 1;
 }
