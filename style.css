@@ -635,7 +635,7 @@ transition: transform 0.3s ease;
 }
 
 .map-img-small {
-max-width: 80%; /* Enlarged from 50% */
+max-width: 100%;
 margin: 0 auto;
 display: block;
 }
@@ -1394,20 +1394,4 @@ font-size: 1.5rem;
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
   position: relative;
   z-index: 1;
-}
-
-/* ── Hero registrácia button ── */
-
-/* Okamžité zobrazenie — bez čakania na scroll */
-.hero .hero-actions {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
-}
-
-/* Červené zvýraznenie — rovnaký efekt ako highlight-card */
-.hero .btn-grey {
-  border-color: var(--c-red) !important;
-  box-shadow: 0 0 20px var(--c-red-glow), 0 4px 15px rgba(0,0,0,0.3);
-  animation: pulse 2s infinite;
 }
