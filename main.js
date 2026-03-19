@@ -60,3 +60,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 revealElements.forEach(el => revealObserver.observe(el));
+
+// Hero elements activate immediately on load
+document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('active'));
