@@ -29,9 +29,15 @@ if (mobileMenuBtn && navLinks) {
 }
 
 // --- Countdown Timer ---
-const interval = setInterval(function() {
+function updateCountdown() {
   const now = new Date().getTime();
   const distance = countdownDate - now;
+
+  if (distance < 0) {
+    clearInterval(interval);
+    document.getElementById("countdown").innerHTML = "<span style='font-size:1.5rem'>Beh začal! 🏃</span>";
+    return;
+  }
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -42,12 +48,10 @@ const interval = setInterval(function() {
   document.getElementById("cd-hours").innerText = hours < 10 ? '0' + hours : hours;
   document.getElementById("cd-minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
   document.getElementById("cd-seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+}
 
-  if (distance < 0) {
-    clearInterval(interval);
-    document.getElementById("countdown").innerHTML = "<span style='font-size:1.5rem'>Beh začal! 🏃</span>";
-  }
-}, 1000);
+updateCountdown();
+const interval = setInterval(updateCountdown, 1000);
 
 // --- Reveal on Scroll ---
 const revealElements = document.querySelectorAll('.reveal');
@@ -61,5 +65,20 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => revealObserver.observe(el));
 
-// Hero elements activate immediately on load
-document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('active'));
+// Hero elements activate immediately on load (double RAF ensures browser paints initial state first)
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('active'));
+  });
+});
+
+// Handle bfcache restore (back/forward navigation)
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    document.querySelectorAll('.hero .reveal').forEach(el => {
+      el.classList.remove('active');
+      void el.offsetWidth;
+      el.classList.add('active');
+    });
+  }
+});
