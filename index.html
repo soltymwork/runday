@@ -8,7 +8,8 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
   <link rel="preload" href="./hero-image.webp" as="image" type="image/webp">
   <link rel="icon" href="./runday-logo.png" type="image/png">
   <link rel="stylesheet" href="./style.css">
@@ -106,10 +107,16 @@
         </div>
         <div class="about-media relative">
           <div class="video-container reveal slide-right">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/li3IxSZb9QE?controls=1" title="YouTube video player - 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="yt-facade" data-videoid="li3IxSZb9QE">
+              <img src="https://i.ytimg.com/vi/li3IxSZb9QE/hqdefault.jpg" alt="YouTube video player - 2025" loading="lazy">
+              <button class="yt-play" aria-label="Prehrať video"></button>
+            </div>
           </div>
           <div class="video-container reveal slide-left" style="transition-delay: 200ms">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sAsYY9stpAU?controls=1" title="YouTube video player - 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="yt-facade" data-videoid="sAsYY9stpAU">
+              <img src="https://i.ytimg.com/vi/sAsYY9stpAU/hqdefault.jpg" alt="YouTube video player - 2024" loading="lazy">
+              <button class="yt-play" aria-label="Prehrať video"></button>
+            </div>
           </div>
         </div>
       </div>
