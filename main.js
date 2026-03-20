@@ -72,6 +72,18 @@ requestAnimationFrame(() => {
   });
 });
 
+// --- YouTube Facade ---
+document.querySelectorAll('.yt-facade').forEach(facade => {
+  facade.addEventListener('click', () => {
+    const id = facade.dataset.videoid;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${id}?controls=1&autoplay=1`;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    facade.replaceWith(iframe);
+  });
+});
+
 // Handle bfcache restore (back/forward navigation)
 window.addEventListener('pageshow', (event) => {
   if (event.persisted) {
